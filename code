@@ -1,0 +1,61 @@
+import java.util.Scanner;
+class Main {
+  public static void main(String args[]) { 
+    Scanner in = new Scanner (System.in);
+    int y;//begining of application click any number to open
+    int d;//how many oz of water you drink per day
+    int r;//to choose how you want to input oz
+    int o;//the number of years in your life
+    int t;//the number of 11,000 gallon tanker trucks drunk
+    int x;//control the while loop so that you can calculate the t value
+    int f;// choose how you want to input lifespan
+    d = 1;
+    o = 1;
+    x = 1;
+    
+    //opening of the application starts the for loop so you can choose to calculate again. 
+    System.out.println("**This is an application which will calculate how many 11,000 gallon Tanker trucks that you will drink in your life time.click any number to open");
+    y = in.nextInt();
+    System.out.println("you chose "+ y);
+    for (y = 1;y<= 10; y++){
+
+      //this is what you are using to choose how to imput your oz. 
+    System.out.println("If you want to calculate this with the recomended amount of water per day (2 liters ~ 68oz)TYPE: 1. If you want to calculate the amount of water per day with the least amount of water you can drink and survive(1 liter ~ 33 oz)TYPE: 2. If you want to type in a value of oz. TYPE: 3");
+    r = in.nextInt();
+    System.out.println("you chose "+ r);
+    if (r == 1){//if you want recomended oz per day 
+      d = 68;
+      System.out.println("you drink 68 oz per day");
+    }
+    else if (r == 2){//if you want the least amount of water you can drink per day
+      d = 33;
+      System.out.println();
+    }
+    else if (r ==3) {//if you want to type in how much water you drink in a day
+      System.out.println("type the amount of water in oz on average you drink per day");
+    d = in.nextInt();
+    System.out.println("you drink: "+ d + " oz. of water per day");
+    }
+    System.out.println("If you want to calculate this value with the average lifespan across the globe TYPE: 1. If you want to type in your own age TYPE: 2. ");
+    f = in.nextInt();
+    System.out.println("you chose"+f);
+    if (f==1){
+      o = 70;
+    }else if (f == 2){
+      System.out.println("type your age: ");
+      o = in.nextInt();
+      System.out.println("your age choice is "+ o);
+    }
+    while (x<10){
+      System.out.println();
+      t = (((((d*365)/128))*o)/11000);
+      System.out.println( "over your life of "+ o + " years, you will drink: "+ t +" 11,000 tanker trucks");
+      x=12;
+      }
+      System.out.println("Do you want to calculate agian? YES = 1 NO = 12 ");
+      y = in.nextInt();
+      }
+      System.out.println();
+    }
+  }
+  
